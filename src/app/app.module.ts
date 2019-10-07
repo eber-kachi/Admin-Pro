@@ -7,8 +7,7 @@ import { APP_ROUTES } from "./app.routes";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./login/login.component";
-import { NopagefoundComponent } from "./shared/nopagefound/nopagefound.component";
-
+//componentes 
 import { RegisterComponent } from './login/register.component';
 import { PagesModule } from './pages/pages.module';
 
