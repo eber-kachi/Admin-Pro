@@ -14,6 +14,7 @@ import { HeaderComponent } from "./shared/header/header.component";
 import { SidebarComponent } from "./shared/sidebar/sidebar.component";
 import { BreadcumbsComponent } from "./shared/breadcumbs/breadcumbs.component";
 import { PagesComponent } from './pages/pages.component';
+import { RegisterComponent } from './login/register.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PagesComponent } from './pages/pages.component';
     HeaderComponent,
     SidebarComponent,
     BreadcumbsComponent,
-    PagesComponent
+    PagesComponent,
+    RegisterComponent
   ],
   imports: [BrowserModule, AppRoutingModule, APP_ROUTES],
   providers: [],
