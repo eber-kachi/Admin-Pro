@@ -3,22 +3,29 @@ import { NgModule } from "@angular/core";
 //ROUTES
 import { APP_ROUTES } from "./app.routes";
 // Modulos
+import { PagesModule } from './pages/pages.module';
 
-import { AppRoutingModule } from "./app-routing.module";
+
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./login/login.component";
 //componentes 
 import { RegisterComponent } from './login/register.component';
-import { PagesModule } from './pages/pages.module';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
 
   ],
-  imports: [BrowserModule, AppRoutingModule, APP_ROUTES, PagesModule],
+  imports: [
+    BrowserModule,
+
+    APP_ROUTES,
+    PagesModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
