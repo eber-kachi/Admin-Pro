@@ -7,13 +7,15 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ProgressComponent implements OnInit {
 
-  progreso: number;
+  progreso1: number;
+  progreso2: number;
 
-  /*constructor() {
-    this.progreso = 50;
+  constructor() {
+    this.progreso1 = 50;
+    this.progreso2 = 20;
   }
 
-  sumarProgreso(value: number) {
+  /*sumarProgreso(value: number) {
     if (this.progreso + value >= 100 ) {
       this.progreso = 100;
     } else if ( this.progreso + value <= 0) {// lo vuelmo a sumar por que -*-  se suma

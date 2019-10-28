@@ -1,4 +1,4 @@
-import { Component, OnInit ,Input } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-incrementador',
@@ -8,6 +8,8 @@ import { Component, OnInit ,Input } from '@angular/core';
 export class IncrementadorComponent implements OnInit {
   @Input('nombre') leyenda: string;
   @Input() progreso: number;
+  @Output() cambioValor: EventEmitter<number> = new EventEmitter();
+
   constructor() {
     this.leyenda = 'Leyenda';
     this.progreso = 20;
@@ -17,13 +19,32 @@ export class IncrementadorComponent implements OnInit {
   }
 
   sumarProgreso(value: number) {
-    if (this.progreso + value >= 100 ) {
+    if (this.progreso >= 100 && value>0) {
       this.progreso = 100;
-    } else if ( this.progreso + value <= 0) {// lo vuelmo a sumar por que -*-  se suma
-      this.progreso = 0;
-    } else {
-      this.progreso += value;
+      return ;
     }
+    if (this.progreso <= 0 && value<0) {// lo vuelmo a sumar por que -*-  se suma
+      this.progreso = 0;
+      return 0 ;
+    }
+    this.progreso += value;
+    this.cambioValor.emit(this.progreso); // con esto estamos mandado el valor al otro componente
+
     console.log(this.progreso);
+  }
+
+  onChanges(newNumber: number) {
+    let elemHTML:any=document.getElementsByName('progreso')[0];
+     console.log(elemHTML);
+     console.log(newNumber);
+    if (newNumber >= 100 ) {
+       this.progreso = 100;
+     }else if (newNumber <= 0 ) {
+       this.progreso = 0;
+     }else{
+       this.progreso = newNumber;
+     }
+    elemHTML.value=this.progreso;
+    this.cambioValor.emit(this.progreso);
   }
 }
