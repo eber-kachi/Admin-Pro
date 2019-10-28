@@ -31,7 +31,7 @@ export class IncrementadorComponent implements OnInit {
     }
     this.progreso += value;
     this.cambioValor.emit(this.progreso); // con esto estamos mandado el valor al otro componente
-
+this.txtProgress.nativeElement.focus();
     console.log(this.progreso);
   }
 
