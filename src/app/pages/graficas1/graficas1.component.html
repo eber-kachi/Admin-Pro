@@ -1,1 +1,40 @@
-<p>graficas1 works!</p>
+<div class="row">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <app-graficodona [labels]="graficos.grafico1.labels" leyenda="{{graficos.grafico2.leyenda}}" type="doughnut" [data]="graficos.grafico1.data"></app-graficodona>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <div>
+          <div>
+            <app-graficodona [labels]="graficos.grafico2.labels" leyenda="{{graficos.grafico2.leyenda}}" type="doughnut" [data]="graficos.grafico2.data"></app-graficodona>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <app-graficodona [labels]="graficos.grafico3.labels" leyenda="{{graficos.grafico3.leyenda}}" type="doughnut" [data]="graficos.grafico3.data"></app-graficodona>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <div>
+          <div>
+            <app-graficodona [labels]="graficos.grafico4.labels" leyenda="{{graficos.grafico4.leyenda}}" type="doughnut" [data]="graficos.grafico4.data"></app-graficodona>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
